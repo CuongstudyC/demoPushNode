@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block content 
+  h3 
+    a(href="/product/create") Create New 
+  h1 Product List 
+  table 
+      thead
+        tr 
+          th Id 
+          th Name 
+          th Price 
+          th Actions
+      tbody 
+        if products != ''
+          each item in products 
+            tr 
+              td= item._id 
+              td= item.name 
+              td= item.price 
+              td 
+                a(href=`/product/update/${item._id}`) Update
+        else 
+          tr 
+            td(colspan='3') No Data

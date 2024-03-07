@@ -1,0 +1,21 @@
+doctype html 
+html 
+    head 
+        title= title 
+    body 
+    h1 Create New Customer
+    if error != '' 
+      span(style="color:red;")= error
+    form(action="/customer/create",method='POST')
+      div 
+        |Name
+        input(type="text", name='name') 
+      div 
+        |Email
+        input(type="email", name='email')
+      div 
+        |Phone
+        input(type="number", name='phone')
+      div 
+        input(type="submit", value="Create")
+        a(href="/customer") Back to IndexPage 

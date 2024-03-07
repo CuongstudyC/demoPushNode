@@ -1,0 +1,22 @@
+doctype html 
+html 
+    head 
+        title Update
+    head 
+    body 
+      form(action='/customer/update', method="post") 
+        h2 Update Customer ID #{customer.id}
+        div 
+          span id: 
+          input(type="text", readonly, value=`${customer.id}`, name='id')
+        div 
+          span Name: 
+          input(type="text", value=`${customer.name}`, name='name')
+        div 
+          span Email: 
+          input(type="email", value=`${customer.email}`, name='email')
+        div 
+          span Phone: 
+          input(type="number", value=`${customer.phone}`, name='phone')
+        div 
+          button(type="submit") Update Now 
